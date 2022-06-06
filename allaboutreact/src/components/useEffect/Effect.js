@@ -9,13 +9,17 @@ export const Effect = () => {
 
   //   console.log("render");
 
-  // everything inside of this function will be executed everysingle time our app renders
-  //   useEffect(() => {
-  //     console.log("render type changed");
-  //     fetch("https://jsonplaceholder.typicode.com/todos/")
-  //       .then((response) => response.json())
-  //       .then((json) => setItems(json));
-  //   }, [resourceType]); // whatever you pass into this array, is gonna be values that whatever they change you hook gonna to run
+  // //   everything inside of this function will be executed everysingle time our app renders
+  //     useEffect(() => {
+  //       console.log("render type changed");
+  //       fetch("https://jsonplaceholder.typicode.com/todos/")
+  //         .then((response) => response.json())
+  //         .then((json) => setItems(json));
+
+  //         return () => { // will render first
+  //             console.log('return from resource change')
+  //         }
+  //     }, [resourceType]); // whatever you pass into this array, is gonna be values that whatever they change you hook gonna to run
 
   //   useEffect(() => {
   //     console.log("onMount");
@@ -32,10 +36,10 @@ export const Effect = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
-    return () => {
-      //this function will cal whatever is useffect is cleaned up
-      window.addEventListener("resize", handleResize);
-    };
+    // return () => {
+    //   //this function will cal whatever is useffect is cleaned up
+    //   window.addEventListener("resize", handleResize);
+    // };
   }, []);
 
   //! finish Example 2
