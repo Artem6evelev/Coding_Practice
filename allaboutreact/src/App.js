@@ -7,10 +7,10 @@ import { Effect } from "./components/useEffect/Effect";
 function App() {
   return (
     <div className="App">
-      <Effect />
+      {/* <Effect />
       <State />
       <EffectHook />
-      <ContextHook />
+      <ContextHook /> */}
     </div>
   );
 }
