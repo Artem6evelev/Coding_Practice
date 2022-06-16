@@ -14,12 +14,32 @@ something.some = 5; // will not work
 //4. - share state across components.
 //? 3. DANGEROUSLY SET INNER HTML - when should I use that in React
 // ANSWER:
-// it same as inner html dom api,
+// 1. - you get HTML from server
+//? 4. Binary tree question from google
+// {value:5, left: {...}, right: {...}}
+// SOLUTION:
+// {left: 'a', right: 'b'}
+// {left: 'b', right: 'a'}
+function invertTree(node) {
+  let left = node.left; //a
+  node.left = node.right; // both 'a'
+  node.right = left;
+  invertTree(node.left);
+  invertTree(node.right);
+}
+//? BONUS
+//  - - - - -
+//  0 1 ... 99
+
+//* there are 100 holes in a line, and there is a rabbit hiding in one of the holes
+
+//* you can only look in one hole at a time, and every time you look in a hole, the rabbit jumps to an adjacent hole find the rabbit
+
+//* a good solution finds the right algorithm with the best O bonus points for providing the exact number of worst case searches for 100 holes.
+
+
+
 
 export default function App() {
-  return (
-    <div className="App">
-      <h1>Intermidiate React </h1>
-    </div>
-  );
+  return <div>center me</div>;
 }
