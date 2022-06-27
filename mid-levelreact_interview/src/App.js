@@ -55,14 +55,44 @@ import "./App.css";
 // console.log("b", b); // not defined
 // console.log("c", c); // not defind
 //? setTimeout Output
-function a() {
-  for (var i = 0; i < 3; i++) {
-    setTimeout(function log() {
-      console.log(i); // What is logged // 0, 1, 2
-    }, i + 1000);
-  }
+// function a() {
+//   for (var i = 0; i < 3; i++) {
+//     setTimeout(function log() {
+//       console.log(i); // What is logged // 0, 1, 2
+//     }, i + 1000);
+//   }
+// }
+// console.log("a()", a());
+// // a() undefined
+// // 3 - after 1 sec 3 times
+//? Explain Call, Apply, Bind
+// // we can manipulater the context for function
+// var person = {
+//   name: "Artem Shevelev",
+//   hello: function (thing) {
+//     console.log(this.name + " says hello " + thing);
+//   },
+// };
+
+// var alterEgo = {
+//   name: "Alina Sheveleva",
+// };
+
+// person.hello.call(alterEgo, "word"); // call takes an oject, that becomes a contaxt for the function
+// person.hello.apply(alterEgo, ["world"]); // will be provided to thing
+// const newHello = person.hello.bind(alterEgo); // return completely new function with a context
+// newHello("world");
+//? Implement Promise.all
+function showText(text, time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(text);
+    }, time);
+  });
 }
-console.log("a()", a());
+Promise.all([showText("hello", 1000), Promise.resolve("hi")]).then((value) =>
+  console.log(value)
+);
 
 function App() {
   return <div className="App"></div>;
